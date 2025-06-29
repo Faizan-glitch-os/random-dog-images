@@ -15,10 +15,9 @@ function App() {
     event.preventDefault();
 
     const form = new FormData(event.currentTarget);
-    const dog = form.get("dog");
-    console.log(dog);
+    const dog = form.get("dog") as string;
 
-    mutate(dog as string);
+    mutate(dog.toLowerCase().trim());
   }
 
   return (
