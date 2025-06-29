@@ -16,7 +16,9 @@ function App() {
 
     const form = new FormData(event.currentTarget);
     const dog = form.get("dog") as string;
-
+    if (dog === "") {
+      return;
+    }
     mutate(dog.toLowerCase().trim());
   }
 
