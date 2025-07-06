@@ -4,6 +4,7 @@ import getDogs from "./http";
 import Loading from "./assets/loading.png";
 import Input from "./components/Input";
 import Image from "./components/Image";
+import ImageSkeleton from "./components/ImageSkeleton";
 
 function App() {
   const { mutate, data, isError, error, isPending } = useMutation({
@@ -25,9 +26,7 @@ function App() {
   return (
     <div className="h-[100vh] w-[100vw] flex flex-col items-center">
       <Input handleSubmit={handleSubmit} isPending={isPending} />
-      {isPending && (
-        <img className="animate-spin" src={Loading} alt="Loading image" />
-      )}
+      {isPending && <ImageSkeleton />}
       {data && data.status === "success" ? (
         <ul className="mt-8 grid grid-rows-4 gap-2 md:grid-cols-2 md:grid-rows-2 md:gap-2">
           {data.message.map((dog, index) => (
