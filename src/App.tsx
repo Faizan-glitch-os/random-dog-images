@@ -1,7 +1,6 @@
 import "./App.css";
 import { useMutation } from "@tanstack/react-query";
 import getDogs from "./http";
-import Loading from "./assets/loading.png";
 import Input from "./components/Input";
 import Image from "./components/Image";
 import ImageSkeleton from "./components/ImageSkeleton";
