@@ -13,6 +13,7 @@ export default async function getDogs(breed: string): Promise<dogsType> {
 
     return data;
   } catch (error) {
+    console.log(error);
     throw new Error("Failed to fetch dog pics");
   }
 }
